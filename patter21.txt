@@ -1,0 +1,31 @@
+public void displayPattern1(int size) {
+    // Upper part
+    for (int ln = 1; ln <= size; ln++) {
+        for (int space=1;space = size - ln; ; space--) {
+            System.out.print("  "); 
+        }
+        for (int symb = 1; symb <= ln; symb++) { 
+            if (symb % 2 == 1) { 
+                System.out.print("+");
+            } else {
+                System.out.print(" ");
+            }
+        }
+        System.out.println(); 
+        }
+
+    // Lower part
+    for (int ln = size - 1; ln >= 1; ln--) { 
+        for (int space = size - ln; space > 0; space--) {
+            System.out.print("  "); 
+        }
+        for (int symb = 1; symb <= ln; symb++) { 
+            if (symb % 2 == 1) { 
+                System.out.print("*");
+            } else {
+                System.out.print(" ");
+            }
+        }
+        System.out.println(); 
+    }
+}
