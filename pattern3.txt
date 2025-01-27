@@ -1,0 +1,38 @@
+public static void displayPattern3(int size){
+           
+        for(int ln = 1 ; ln <= size ; ln ++){
+            for(int space = size - ln ; space > 0 ; space --){
+                System.out.print(" ");}
+            
+            
+            for(int sign = 2*ln -1 ; sign > 0 ; sign --){
+                if((sign+ln) %2 == 1){
+               		System.out.print("*");
+                }
+                else 
+                {
+                System.out.print("+");
+                }
+                }
+            
+            System.out.println();
+        }
+        
+        for(int ln = size  ; ln > 0 ; ln--){
+            for(int space = size - ln ; space>0; space--){
+                System.out.print(" ");
+            }
+            for(int sign = 2*ln -1 ; sign >0 ; sign--){
+                if((sign+ln) %2 == 1){
+                System.out.print("+");
+                }
+                else
+                {
+                 System.out.print("*");
+            }
+            }
+            System.out.println();
+        }
+    }
+    
+    
