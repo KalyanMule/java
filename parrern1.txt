@@ -1,0 +1,22 @@
+public void displayPattern1(int size){
+        //upper part
+        for(int ln =1;ln<=size;ln++){
+            for(int space = 1;space<=size-ln;space++){
+                System.out.print("  ");
+            }
+            for(int symb=2*ln-1;symb>0;symb--){
+                System.out.print("+ ");
+            }
+            System.out.println();
+        }
+        //lower part
+         for(int ln =1;ln<=size-1;ln++){
+            for(int space = ln ;space>0;space--){
+                System.out.print("  ");
+            }
+            for(int symb=size-2*ln+2;symb>0;symb--){
+                System.out.print("+ ");
+            }
+            System.out.println();
+        }
+    }
