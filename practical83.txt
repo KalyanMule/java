@@ -1,0 +1,35 @@
+public class Pattern {
+
+    public static void main(String[] args) {
+        printStars(3);
+        printPlusSigns();
+        printSlashes(3);
+    }
+    static void printStars(int size) {
+        for (int line = 1; line <= size; line++) {
+            for (int space = 1; space <= size - line; space++) {
+                System.out.print(" ");
+            }
+            for (int star = 1; star <= line; star++) {
+                System.out.print("*");
+            }
+            System.out.println(); 
+        }
+    }
+
+    static void printPlusSigns() {
+        System.out.println("++++");
+    }
+    static void printSlashes(int size) {
+        for (int line = size; line >= 1; line--) {
+            for (int space = 1; space <= size - line; space++) {
+                System.out.print(" ");
+            }
+            for (int star = 1; star <= line; star++) {
+                System.out.print("/");
+            }
+            System.out.println(); 
+        }
+    }
+}
+

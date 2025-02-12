@@ -1,0 +1,33 @@
+public class Pattern {
+
+    public static void main(String[] args) {
+        
+        printPattern(1, 3);
+        System.out.println();
+    }
+
+    
+    static void printPattern(int line, int totalLines) {
+        
+        if (line <= totalLines) {
+           
+            printStars(line, 1);
+            System.out.println();  
+            
+            printPattern(line + 1, totalLines);
+        }
+       
+        printStars(line, 1);
+        System.out.println();  
+        }
+
+    
+    static void printStars(int line, int currentStar) {
+        
+        if (currentStar <= line) {
+            System.out.print("*");
+            printStars(line, currentStar + 1); 
+        }
+    }
+}
+
