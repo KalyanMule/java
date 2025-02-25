@@ -1,0 +1,61 @@
+public class Performance {
+
+    public static void main(String[] args) {
+        int n = 1000;  
+        Performance(n);
+    }
+
+    public static void Performance(int n) {
+        long[] a = new long[n];
+        long sum1 = 0, sum2 = 0;
+        
+        for (int i = 0; i < a.length; i++) {
+            a[i] = System.nanoTime() % 50 + 1;
+        }
+
+        
+        for (int j = 0; j < a.length; j++) {
+            long Start_Time1 = System.nanoTime();
+            Getfact_itreation(a[j]);
+            long End_Time1 = System.nanoTime();
+
+            long Start_Time2 = System.nanoTime();
+            Getfact_Recursion(a[j]);
+            long End_Time2 = System.nanoTime();
+
+            sum1 = sum1 + (End_Time1 - Start_Time1);
+            sum2 = sum2 + (End_Time2 - Start_Time2);
+        }
+
+        
+        float avg_time1 = (float) sum1 / a.length;
+        float avg_time2 = (float) sum2 / a.length;
+
+        
+        if (avg_time1 > avg_time2) {
+            System.out.println("Recursion is faster than Iteration");
+        } else {
+            System.out.println("Iteration is faster than Recursion");
+        }
+
+        System.out.println("Average time for Iteration: " + avg_time1 + " ns");
+        System.out.println("Average time for Recursion: " + avg_time2 + " ns");
+    }
+
+    {
+        if (n <= 0) return 0; 
+        long p = 1;
+        for (long i = 1; i <= n; i++) {
+            p = p * i;
+        }
+        return p;
+    }
+
+   
+    public static long Getfact_Recursion(long n) {
+        if (n <= 0) return 0; 
+        if (n == 1) return 1;
+        return n * Getfact_Recursion(n - 1);
+    }
+}
+
